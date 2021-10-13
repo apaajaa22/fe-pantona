@@ -7,7 +7,7 @@ function DetailPage() {
   const {id} = useParams()
   const dispatch = useDispatch()
   const {detailProduk} = useSelector((state) => state.produk)
-  const arr = detailProduk.stock.split(",")
+
   useEffect(() => {
     dispatch(getDetailProduk(id))
   }, [])
@@ -26,7 +26,7 @@ function DetailPage() {
         <div className="flex flex-row">
           <p>Tersedia ukuran</p>
           <select className="border-2 border-black ml-4">
-            {detailProduk.stock.split(",").map((res) => {
+            {detailProduk?.stock?.split(",").map((res) => {
               return <option className="max-w-screen-sm text-sm">{res}</option>
             })}
           </select>
