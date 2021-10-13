@@ -34,7 +34,7 @@ function ProdukAdmin() {
           Tambah Produk
         </Link>
         {produk.length > 1 ? (
-          <table className="border-collapse bg-yellow-100 rounded mt-5">
+          <table className="table-auto border-collapse bg-yellow-100 rounded mt-5">
             <tr className="px-20">
               <th className="p-2">Nama</th>
               <th>picture</th>
