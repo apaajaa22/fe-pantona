@@ -25,7 +25,7 @@ function ProdukAdmin() {
   return (
     <div className="flex flex-row">
       <SideBarAdmin />
-      <div className="pl-5 pt-4">
+      <div className="px-5 pt-4 w-4/5">
         <h3 className="text-xl font-semibold mb-10">Produk</h3>
         <Link
           to="/create-produk"
@@ -35,51 +35,55 @@ function ProdukAdmin() {
         </Link>
         {produk.length > 1 ? (
           <table className="table-auto border-collapse bg-yellow-100 rounded mt-5">
-            <tr className="px-20">
-              <th className="p-2">Nama</th>
-              <th>picture</th>
-              <th>kategori</th>
-              <th>desc</th>
-              <th>price</th>
-              <th>stock</th>
-              <th>gender</th>
-              <th>Aksi</th>
-            </tr>
-            {produk.map((data, idx) => {
-              return (
-                <tr>
-                  <td className="pl-4 ">{data.name}</td>
-                  <td className="pl-1">
-                    <img
-                      className="w-24 h-24 cover-full"
-                      src={`http://localhost:8080${data.picture}`}
-                      alt=""
-                    />
-                  </td>
-                  <td className="pl-1 text-center">
-                    {data.kategori?.nama_kategori}
-                  </td>
-                  <td className="pl-1 overflow-ellipsis">{data.desc}</td>
-                  <td className="pl-1">{data.price}</td>
-                  <td className="pl-1">{data.stock}</td>
-                  <td className="pl-1">{data.gender}</td>
-                  <td className="p-2 flex flex-col space-y-1">
-                    <Link
-                      to={`/edit-produk/${data.id}`}
-                      className="bg-blue-800 p-1 text-center text-white rounded"
-                    >
-                      edit
-                    </Link>
-                    <button
-                      onClick={() => onDelete(data)}
-                      className="bg-red-800 p-1 text-white rounded"
-                    >
-                      delete
-                    </button>
-                  </td>
-                </tr>
-              )
-            })}
+            <thead>
+              <tr className="px-20">
+                <th className="p-2">Nama</th>
+                <th>picture</th>
+                <th>kategori</th>
+                <th>desc</th>
+                <th>price</th>
+                <th>stock</th>
+                <th>gender</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              {produk.map((data, idx) => {
+                return (
+                  <tr>
+                    <td className="pl-4 ">{data.name}</td>
+                    <td className="pl-1">
+                      <img
+                        className="w-24 h-24 cover-full"
+                        src={`http://localhost:8080${data.picture}`}
+                        alt=""
+                      />
+                    </td>
+                    <td className="pl-1 text-center">
+                      {data.kategori?.nama_kategori}
+                    </td>
+                    <td className="pl-1 overflow-ellipsis">{data.desc}</td>
+                    <td className="pl-1">{data.price}</td>
+                    <td className="pl-1">{data.stock}</td>
+                    <td className="pl-1">{data.gender}</td>
+                    <td className="p-2 flex flex-col space-y-1">
+                      <Link
+                        to={`/edit-produk/${data.id}`}
+                        className="bg-blue-800 p-1 text-center text-white rounded"
+                      >
+                        edit
+                      </Link>
+                      <button
+                        onClick={() => onDelete(data)}
+                        className="bg-red-800 p-1 text-white rounded"
+                      >
+                        delete
+                      </button>
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
           </table>
         ) : (
           <p className="text-2xl font-semibold my-20">data tidak ditemukan</p>

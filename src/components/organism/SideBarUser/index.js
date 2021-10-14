@@ -8,7 +8,6 @@ function SideBarUser() {
   const dispatch = useDispatch()
   const history = useHistory()
   const [show, setShow] = useState(false)
-  const [page, setPage] = useState(1)
 
   const onLogout = (e) => {
     e.preventDefault()
@@ -29,12 +28,10 @@ function SideBarUser() {
           <>
             <li className="pl-5">
               <button
-                onClick={() =>
-                  dispatch(
-                    {type: "ID_KATEGORI", payload: ""},
-                    {type: "SET_PAGE", payload: 1}
-                  )
-                }
+                onClick={() => {
+                  dispatch({type: "ID_KATEGORI", payload: ""})
+                  dispatch({type: "SET_PAGE", payload: 1})
+                }}
                 className="text-white text-md"
               >
                 Semua Produk
@@ -42,12 +39,10 @@ function SideBarUser() {
             </li>
             <li className="pl-5">
               <button
-                onClick={() =>
-                  dispatch(
-                    {type: "ID_KATEGORI", payload: 1},
-                    {type: "SET_PAGE", payload: 1}
-                  )
-                }
+                onClick={() => {
+                  dispatch({type: "ID_KATEGORI", payload: 1})
+                  dispatch({type: "SET_PAGE", payload: 1})
+                }}
                 className="text-white text-md"
               >
                 Baju
@@ -55,12 +50,10 @@ function SideBarUser() {
             </li>
             <li className="pl-5">
               <button
-                onClick={() =>
-                  dispatch(
-                    {type: "ID_KATEGORI", payload: 2},
-                    {type: "SET_PAGE", payload: 1}
-                  )
-                }
+                onClick={() => {
+                  dispatch({type: "ID_KATEGORI", payload: 2})
+                  dispatch({type: "SET_PAGE", payload: 1})
+                }}
                 className="text-white text-md"
               >
                 Celana
@@ -68,12 +61,10 @@ function SideBarUser() {
             </li>
             <li className="pl-5">
               <button
-                onClick={() =>
-                  dispatch(
-                    {type: "ID_KATEGORI", payload: 3},
-                    {type: "SET_PAGE", payload: 1}
-                  )
-                }
+                onClick={() => {
+                  dispatch({type: "ID_KATEGORI", payload: 3})
+                  dispatch({type: "SET_PAGE", payload: 1})
+                }}
                 className="text-white text-md"
               >
                 Sepatu

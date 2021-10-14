@@ -21,6 +21,7 @@ function HomeUser() {
     dispatch({type: "SET_PAGE", payload: page - 1})
   }
   const onSearch = () => {
+    dispatch({type: "SET_PAGE", payload: 1})
     dispatch(searchProduk(page, search))
     setSearch("")
   }
