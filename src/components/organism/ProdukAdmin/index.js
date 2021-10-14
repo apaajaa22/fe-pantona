@@ -63,7 +63,7 @@ function ProdukAdmin() {
                       {data.kategori?.nama_kategori}
                     </td>
                     <td className="pl-1 overflow-ellipsis">{data.desc}</td>
-                    <td className="pl-1">{data.price}</td>
+                    <td className="pl-1">{data.price.toLocaleString("en")}</td>
                     <td className="pl-1">{data.stock}</td>
                     <td className="pl-1">{data.gender}</td>
                     <td className="p-2 flex flex-col space-y-1">

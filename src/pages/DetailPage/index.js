@@ -21,7 +21,9 @@ function DetailPage() {
       <div className="space-y-2">
         <p className="text-2xl font-bold">{detailProduk.name}</p>
         <p className="text-xl">{detailProduk.gender}</p>
-        <p className="text-xl font-semibold">Rp. {detailProduk.price}</p>
+        <p className="text-xl font-semibold">
+          Rp. {detailProduk.price.toLocaleString("en")}
+        </p>
         <p className="max-w-screen-md text-sm">Rp. {detailProduk.desc}</p>
         <div className="flex flex-row">
           <p>Tersedia ukuran</p>
